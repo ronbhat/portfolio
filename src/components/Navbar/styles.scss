@@ -1,0 +1,106 @@
+.navbar {
+    //background-color: red;
+    background-color: rgba($color: #f0f0f0, $alpha: 0.5);
+    width: 100%;
+    display: inline-flex;
+    position: relative;
+
+    .navbar__brand {
+        width: 110px;
+        height: 50px;
+        background-image: url("/logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .icon {
+        font-size: 1.5rem; 
+        display: none;
+    }
+
+    .navbar__nav {
+        //background-color: yellow;
+        position: absolute;
+        right: 1rem;
+
+        display: inline-flex;
+        list-style: none;
+        min-width: 50%;
+        justify-content: flex-end;
+        margin: 0;
+        
+        .navbar__nav-item {
+            margin: 0 15px;
+            display: block;
+            height: 100%;
+            
+            a {
+                display: block;
+                text-decoration: none;
+                color: inherit;
+                padding: 15px 5px;
+            }
+            &:hover {
+                border-bottom: #ff0000 2px solid;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        align-items: center;
+
+        .navbar__brand {
+            width: 90%;
+            background-position-x: left;
+            margin: auto 0 auto 10px;
+        }
+
+        .icon {
+            display: block;
+        }
+
+        .navbar__nav {
+            /* display: none;
+            height: 0; */
+            background-color: inherit;
+            transition: top 0.5s;
+            flex-direction: column;
+            top: -500px;
+            left: 0;
+            right: 0;
+            font-size: 1.5rem;
+            padding-left: 0;
+
+            &--responsive {
+                /* display: flex; */
+                top: 48px;
+                //height: 500px;
+            }
+            .navbar__nav-item {
+                margin: auto 0;
+                text-align: center;
+                padding-left: 0;
+
+                a {
+                    padding: 10px 0;
+                }
+                &:hover {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+/* Standard syntax */
+/* @keyframes example {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes exampleOne {
+    from {opacity: 1}
+    to {opacity: 0}
+} */
